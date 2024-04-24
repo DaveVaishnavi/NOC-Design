@@ -1,0 +1,15 @@
+# RL algorithm is not coded but a comparative analysis is provided.
+
+# DQN vs. Q-Learning:
+# Q-Learning: Q-learning is a model-free RL algorithm that learns the optimal action-value function by iteratively updating Q-values based on the Bellman equation. It works well for discrete action spaces and is relatively simple to implement.
+# DQN: DQN extends Q-learning to handle high-dimensional state spaces by approximating the action-value function using a deep neural network. It overcomes the limitations of Q-learning in handling large and continuous state spaces and provides better generalization.
+# Justification: In the NOC design problem, the state space could be complex due to the various parameters (e.g., buffer sizes, arbitration weights) that need to be optimized. DQN's ability to handle high-dimensional state spaces makes it a suitable choice.
+# DQN vs. SARSA:
+# SARSA: SARSA is an on-policy RL algorithm that learns action-values by directly estimating the expected return from taking a particular action in a given state and following a specific policy thereafter. It updates Q-values based on the current policy.
+# DQN: DQN is an off-policy RL algorithm that learns action-values from experience replay, where it samples transitions from a replay buffer and updates the Q-network parameters. It learns from a mixture of recent and past experiences, which can lead to more stable and efficient learning.
+# Justification: In the NOC design problem, off-policy learning may be advantageous as it allows the agent to explore a wider range of actions while still learning from past experiences. This can lead to better exploration and faster convergence, making DQN a preferable choice.
+# DQN vs. Actor-Critic:
+# Actor-Critic: Actor-Critic algorithms combine aspects of policy-based (actor) and value-based (critic) methods. The actor learns a policy that maps states to actions, while the critic evaluates the policy by estimating the value function.
+# DQN: DQN is a value-based RL algorithm that directly learns the action-value function without explicitly learning a policy. It selects actions based on the Q-values and does not require a separate policy network.
+# Justification: While Actor-Critic methods can be effective in environments with continuous action spaces and require less computation compared to DQN, they may be more complex to implement and tune. In the NOC design problem, where the action space may be discrete and well-defined (e.g., adjusting buffer sizes, arbitration weights), DQN's simplicity and effectiveness make it a suitable choice.
+# Overall, DQN is selected for the NOC design problem due to its ability to handle high-dimensional state spaces, efficient exploration through experience replay, and simplicity of implementation compared to other RL algorithms like Q-learning, SARSA, and Actor-Critic.
